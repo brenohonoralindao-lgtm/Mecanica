@@ -110,6 +110,7 @@ select * from fornecedor;
 
 create table if not exists veiculo (
 id_veiculo int auto_increment primary key,
+chassi varchar(17) unique not null,
 placa varchar(10) unique not null,
 modelo varchar(50) not null,
 marca varchar(50) not null,
@@ -118,13 +119,13 @@ id_cliente int not null,
 constraint fk_veiculo_cliente foreign key (id_cliente) references cliente(id_cliente)
 );
 
-insert into veiculo (placa, modelo, marca, ano, id_cliente)
+insert into veiculo (chassi, placa, modelo, marca, ano, id_cliente)
 values
-	('HJQ9873', 'Corolla', 'Toyota', 2020, 1),
-    ('PLK4521', 'Civic', 'Honda', 2019, 2),
-    ('MNB7890', 'Onix', 'Chevrolet', 2021, 3),
-    ('QWE3345', 'HB20', 'Hyundai', 2018, 4),
-    ('ZXC9087', 'Gol', 'Volkswagen', 2022, 5);
+	('9BWCB45W0FT123456', 'HJQ9873', 'Corolla', 'Toyota', 2020, 1),
+    ('93YAB24X0JT987654', 'PLK4521', 'Civic', 'Honda', 2019, 2),
+    ('1HGCR2F80HA012345', 'MNB7890', 'Onix', 'Chevrolet', 2021, 3),
+    ('1FA6P8CF0H5111222', 'QWE3345', 'HB20', 'Hyundai', 2018, 4),
+    ('9BGAK11X0KY555666', 'ZXC9087', 'Gol', 'Volkswagen', 2022, 5);
 select * from veiculo;
 
 ---------------------------------------------------------------------------------
